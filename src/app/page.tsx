@@ -7,10 +7,10 @@ export default function Home() {
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {products.map((product) => (
           <div key={product.id} style={{ margin: '20px', width: '200px' }}>
-            <img src={product.image} alt={product.name} style={{ width: '100%' }} />
-            <h2>{product.name}</h2>
-            <p>{product.description}</p>
-            <p>${product.price}</p>
+            <img src='https://dummyjson.com/image/150' alt={product.TITLE} style={{ width: '100%' }} />
+            <h2>{product.TITLE}, {product.BRAND}</h2>
+            <p>{product.VOLUME}</p>
+            <p>${product.PRICE}</p>
           </div>
         ))}
       </div>
