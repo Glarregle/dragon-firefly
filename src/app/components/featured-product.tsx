@@ -8,9 +8,9 @@ interface FeaturedProductProps {
   product: Product;
 }
 
-const FeaturedProduct: React.FC<FeaturedProductProps> = ({ product, id }) => {
+const FeaturedProduct: React.FC<FeaturedProductProps> = ({ product }) => {
 	return (
-		<div className='bg-light-gray rounded-xl p-4 p-4' key={id}>
+		<div className='bg-light-gray rounded-xl p-4'>
 			<Image
 	          src="/images/sample-perfume.png"
 	          alt="Featured perfume"

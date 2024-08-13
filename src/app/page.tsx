@@ -23,7 +23,7 @@ export default function Home() {
       <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-3 gap-8">
             {featuredProducts.map((product, index) => (
-              <FeaturedProduct product={product} id={index}/>
+              <FeaturedProduct product={product} key={index}/>
             ))}
           </div>
       </div>
