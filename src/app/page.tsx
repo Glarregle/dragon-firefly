@@ -1,10 +1,9 @@
-import products from '../mock-backend/products';
 import FeaturedProduct from './components/featured-product';
-
-const featuredProducts = [products[0], products[1], products[2]];
+import Link from 'next/link'
+import products from '../mock-backend/products';
+import FeaturedProducts from './components/featured-products';
 
 export default function Home() {
-
 
   return (
     <div className='flex flex-col flex-auto'>
@@ -20,13 +19,16 @@ export default function Home() {
         ))}
       </div>
       <h2 className='text-2xl mb-4'>Featured products</h2>
-      <div className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-3 gap-8">
-            {featuredProducts.map((product, index) => (
-              <FeaturedProduct product={product} key={index}/>
-            ))}
-          </div>
-      </div>
+
+      {/* Composition over inheritance approach */}
+      <FeaturedProducts>
+        {(product) => 
+          <Link href="/product">
+            <FeaturedProduct product={product} />
+          </Link>
+        }
+      </FeaturedProducts>
+
     </div>
   );
 }
