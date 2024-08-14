@@ -7,7 +7,7 @@ export default function Home() {
 
 
   return (
-    <div className='bg-white flex flex-col flex-auto'>
+    <div className='flex flex-col flex-auto'>
       <h1>Perfume Collection</h1>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {products.slice(0, 4).map((product, index) => (
