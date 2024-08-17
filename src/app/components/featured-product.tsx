@@ -19,8 +19,8 @@ const FeaturedProduct: React.FC<FeaturedProductProps> = ({ product }) => {
 	          className="rounded-xl mb-5"
 	        />
 	        <div>
-				<h3 className='text-2xl mb-1.5'>{product.TITLE}</h3>
-				<p className='text-base'>€{product.PRICE}</p>
+				<h3 className='text-2xl mb-1.5'>{product.title}</h3>
+				<p className='text-base'>€{product.price}</p>
 			</div>
 		</div>
 	)
