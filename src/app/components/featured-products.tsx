@@ -9,7 +9,7 @@ const FeaturedProducts = async ({ children } : FeaturedProductsProps) => {
 
   // GET featured products
 
-  // generate static segments for the featured products, so is server side
+  // TODO: generate static segments for the featured products, so is server side
   // then generate segments with prodcuts ids
 
   const res = await fetch('http://localhost:3000/api/perfumes?featured=true', { cache: 'no-store' });
