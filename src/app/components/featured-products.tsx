@@ -12,7 +12,8 @@ const FeaturedProducts = async ({ children } : FeaturedProductsProps) => {
   // TODO: generate static segments for the featured products, so is server side
   // then generate segments with prodcuts ids
 
-  const res = await fetch('http://localhost:3000/api/perfumes?featured=true', { cache: 'no-store' });
+  const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const res = await fetch(`${apiBaseUrl}/api/perfumes?featured=true`, { cache: 'no-store' });
   
   if (!res.ok) {
     console.log('Failed to fetch data:', res);

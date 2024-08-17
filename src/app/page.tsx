@@ -4,8 +4,9 @@ import Link from 'next/link'
 import { Product } from './types'
 
 export default async function Home() {
-
-  const res = await fetch('http://localhost:3000/api/perfumes');
+  
+  const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const res = await fetch(`${apiBaseUrl}/api/perfumes`);
   if (!res.ok) {
     console.log('Failed to fetch data:', res);
     return <div>Error fetching products.</div>;
