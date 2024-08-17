@@ -6,7 +6,7 @@ interface FeaturedProductsProps {
   children: (product: Product) => React.ReactElement;
 }
 
-const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ children }) => {
+const FeaturedProducts = async ({ children } : FeaturedProductsProps) => {
 
   // GET featured products
 
@@ -35,7 +35,10 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ children }) => {
 
 	    <div className="grid grid-cols-3 gap-8">
 	      {featuredProducts.map((product: Product) => (
-	        React.cloneElement(children(product), { key: `${product.TITLE}${product.PRICE}` })
+	      	// This approach abstracts the key management.
+	      	// Defining the key prop within the component is optimal and aligns with best practices. 
+	      	// It's cleaner, more maintainable, and less error-prone. 
+	        React.cloneElement(children(product), { key: product.id })
 	      ))}
 	    </div>
 	  </div>
