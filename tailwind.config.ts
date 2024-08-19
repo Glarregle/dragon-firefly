@@ -12,6 +12,9 @@ const config: Config = {
         'lighter-black': '#030303',
         'light-gray': '#d3d3d3',
       },
+      spacing: {
+        '100': '25rem',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
