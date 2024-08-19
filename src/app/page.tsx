@@ -1,5 +1,6 @@
 import FeaturedProduct from './components/featured-product';
 import FeaturedProducts from './components/featured-products';
+import Image from 'next/image'
 import Link from 'next/link'
 import { Product } from './types'
 
@@ -18,6 +19,19 @@ export default async function Home() {
   return (
     <div className='flex flex-col flex-auto'>
       <h1>Perfume Collection</h1>
+      <h1 className='text-2xl mb-4'>Welcome to Scent.SK </h1>
+
+      <div className='relative w-full h-100 shrink-0'>
+        <Image
+          src="/images/home-perfumes.jpg"
+          fill={true}
+          style={{objectFit: "cover", objectPosition: "center bottom"}}
+          alt="Home poster"
+        />
+      </div>
+      <p className='mt-4'>Discover the finest selection of perfumes curated for the discerning connoisseur. We believe in the power of scent to elevate every moment.</p>
+
+{/*      <h1>Perfume Collection</h1>
 
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {products.slice(0, 4).map((product: Product) => (
