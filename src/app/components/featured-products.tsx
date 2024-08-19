@@ -24,17 +24,14 @@ const FeaturedProducts = async ({ children } : FeaturedProductsProps) => {
   const featuredProducts: Product[] = data;
 
   return (
-	  <div className="container mx-auto px-4 py-8">
-
-	    <div className="grid grid-cols-3 gap-8">
-	      {featuredProducts.map((product: Product) => (
-	      	// This approach abstracts the key management.
-	      	// Defining the key prop within the component is optimal and aligns with best practices. 
-	      	// It's cleaner, more maintainable, and less error-prone. 
-	        React.cloneElement(children(product), { key: product.id })
-	      ))}
-	    </div>
-	  </div>
+    <div className="grid grid-cols-3 gap-8">
+      {featuredProducts.map((product: Product) => (
+      	// This approach abstracts the key management.
+      	// Defining the key prop within the component is optimal and aligns with best practices. 
+      	// It's cleaner, more maintainable, and less error-prone. 
+        React.cloneElement(children(product), { key: product.id })
+      ))}
+    </div>
   );
 }
 
